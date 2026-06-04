@@ -1,0 +1,62 @@
+<svg width="2200" height="1300" viewBox="0 0 2200 1300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="spaceGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1090 610) rotate(90) scale(520 940)">
+      <stop stop-color="#05F2DB" stop-opacity=".28"/>
+      <stop offset=".42" stop-color="#F205CB" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#050510" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rim" x1="276" y1="570" x2="1900" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#05F2DB"/>
+      <stop offset=".42" stop-color="#F8FBFF"/>
+      <stop offset="1" stop-color="#F205CB"/>
+    </linearGradient>
+    <linearGradient id="steel" x1="500" y1="455" x2="1680" y2="840" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#101020"/>
+      <stop offset=".5" stop-color="#050510"/>
+      <stop offset="1" stop-color="#171025"/>
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-30%" width="140%" height="160%">
+      <feGaussianBlur stdDeviation="18" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="2200" height="1300" fill="#050510"/>
+  <rect width="2200" height="1300" fill="url(#spaceGlow)"/>
+  <g opacity=".58">
+    <circle cx="320" cy="220" r="2" fill="white"/>
+    <circle cx="1870" cy="260" r="2.5" fill="#05F2DB"/>
+    <circle cx="1660" cy="1010" r="2" fill="white"/>
+    <circle cx="610" cy="980" r="2.5" fill="#F205CB"/>
+    <circle cx="1270" cy="164" r="2" fill="white"/>
+  </g>
+  <g opacity=".46">
+    <ellipse cx="1100" cy="650" rx="865" ry="238" stroke="#05C7F2" stroke-opacity=".24" stroke-width="2"/>
+    <ellipse cx="1100" cy="650" rx="1040" ry="286" stroke="#F205CB" stroke-opacity=".16" stroke-width="2"/>
+    <ellipse cx="1100" cy="650" rx="685" ry="178" stroke="white" stroke-opacity=".13" stroke-width="2"/>
+  </g>
+  <g filter="url(#softGlow)">
+    <path d="M420 672C616 504 842 420 1098 420C1354 420 1582 504 1782 672C1584 833 1358 914 1098 914C838 914 614 833 420 672Z" fill="url(#steel)" stroke="url(#rim)" stroke-width="4"/>
+    <path d="M578 660H1622" stroke="url(#rim)" stroke-width="10" stroke-linecap="round"/>
+    <rect x="760" y="508" width="680" height="288" rx="144" fill="#090914" stroke="white" stroke-opacity=".22" stroke-width="3"/>
+    <rect x="865" y="572" width="470" height="160" rx="80" fill="#050510" stroke="#05F2DB" stroke-opacity=".42" stroke-width="2"/>
+    <path d="M924 652H1278" stroke="white" stroke-opacity=".2" stroke-width="8" stroke-linecap="round"/>
+    <path d="M430 616H232" stroke="#05F2DB" stroke-width="8" stroke-linecap="round"/>
+    <path d="M1772 616H1970" stroke="#F205CB" stroke-width="8" stroke-linecap="round"/>
+    <path d="M430 730H232" stroke="#F205CB" stroke-width="8" stroke-linecap="round"/>
+    <path d="M1772 730H1970" stroke="#05C7F2" stroke-width="8" stroke-linecap="round"/>
+    <rect x="168" y="566" width="132" height="100" rx="24" fill="#101020" stroke="white" stroke-opacity=".2"/>
+    <rect x="1900" y="566" width="132" height="100" rx="24" fill="#101020" stroke="white" stroke-opacity=".2"/>
+    <rect x="168" y="680" width="132" height="100" rx="24" fill="#101020" stroke="white" stroke-opacity=".2"/>
+    <rect x="1900" y="680" width="132" height="100" rx="24" fill="#101020" stroke="white" stroke-opacity=".2"/>
+  </g>
+  <g opacity=".74">
+    <path d="M590 454L456 308" stroke="#05C7F2" stroke-width="7" stroke-linecap="round"/>
+    <path d="M1606 454L1748 308" stroke="#F205CB" stroke-width="7" stroke-linecap="round"/>
+    <path d="M594 890L456 1032" stroke="#F205CB" stroke-width="7" stroke-linecap="round"/>
+    <path d="M1602 890L1748 1032" stroke="#05C7F2" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="456" cy="308" r="22" fill="#05C7F2"/>
+    <circle cx="1748" cy="308" r="22" fill="#F205CB"/>
+    <circle cx="456" cy="1032" r="22" fill="#F205CB"/>
+    <circle cx="1748" cy="1032" r="22" fill="#05C7F2"/>
+  </g>
+</svg>

@@ -1,0 +1,24 @@
+<svg width="1100" height="900" viewBox="0 0 1100 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1100" height="900" fill="#050510"/>
+  <radialGradient id="m" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(420 260) rotate(70) scale(560)">
+    <stop stop-color="#F205CB" stop-opacity=".42"/>
+    <stop offset=".55" stop-color="#EE05F2" stop-opacity=".18"/>
+    <stop offset="1" stop-color="#050510" stop-opacity="0"/>
+  </radialGradient>
+  <rect width="1100" height="900" fill="url(#m)"/>
+  <g opacity=".55" filter="url(#blur)">
+    <path d="M170 0L470 900" stroke="#F205CB" stroke-width="34"/>
+    <path d="M760 0L540 900" stroke="#05C7F2" stroke-width="24"/>
+    <path d="M1000 80L640 900" stroke="#EE05F2" stroke-width="30"/>
+  </g>
+  <defs>
+    <filter id="blur" x="-80" y="-80" width="1260" height="1060">
+      <feGaussianBlur stdDeviation="24"/>
+    </filter>
+  </defs>
+  <g opacity=".7">
+    <circle cx="260" cy="610" r="90" fill="#F205CB" fill-opacity=".16" stroke="#F205CB"/>
+    <circle cx="780" cy="300" r="126" fill="#05C7F2" fill-opacity=".12" stroke="#05C7F2"/>
+    <circle cx="620" cy="670" r="48" fill="white" fill-opacity=".1"/>
+  </g>
+</svg>
