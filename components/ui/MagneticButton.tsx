@@ -9,6 +9,8 @@ type MagneticButtonProps = {
   size?: "sm" | "md" | "lg";
   variant?: "primary" | "ghost";
   className?: string;
+  target?: string;
+  rel?: string;
 };
 
 const sizeClass = {
@@ -22,7 +24,9 @@ export function MagneticButton({
   children,
   size = "md",
   variant = "primary",
-  className = ""
+  className = "",
+  target,
+  rel
 }: MagneticButtonProps) {
   const base =
     "group inline-flex items-center justify-center rounded-full font-bold transition focus:outline-none focus:ring-2 focus:ring-[#05F2DB]/70";
@@ -34,6 +38,8 @@ export function MagneticButton({
   return (
     <motion.a
       href={href}
+      target={target}
+      rel={rel}
       whileHover={{ y: -2, scale: 1.015 }}
       whileTap={{ scale: 0.98 }}
       className={`${base} ${styles} ${sizeClass[size]} ${className}`}

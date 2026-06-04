@@ -4,29 +4,38 @@ import { MotionReveal } from "@/components/ui/MotionReveal";
 
 export function PulseMakersSection() {
   return (
-    <section id="makers" className="relative isolate min-h-[100svh] overflow-hidden py-28 md:py-36">
-      <div className="absolute inset-0 z-0 bg-[#050510]" />
+    <section id="docking" className="relative isolate min-h-[92svh] overflow-hidden py-28 md:py-36">
       <Image
-        src="/images/cinematic-universe.svg"
-        alt=""
+        src="/images/mission-03.png"
+        alt="Космонавт на неоновой планете с кристаллами и кольцами"
         fill
-        className="absolute inset-0 z-0 scale-125 object-cover object-[62%_50%] opacity-86 md:scale-105"
+        sizes="100vw"
+        className="absolute inset-0 z-0 object-cover object-center"
       />
-      <div className="absolute inset-0 z-[1] bg-[radial-gradient(circle_at_72%_44%,rgba(5,242,219,0.16),transparent_28%),linear-gradient(90deg,#050510_0%,rgba(5,5,16,0.62)_38%,rgba(5,5,16,0.12)_100%),linear-gradient(180deg,#050510_0%,transparent_34%,#050510_100%)]" />
-      <div className="absolute right-[-16rem] top-1/2 z-[2] h-[58rem] w-[58rem] -translate-y-1/2 rounded-full bg-[radial-gradient(circle_at_36%_32%,rgba(5,242,219,0.18),rgba(20,13,47,0.74)_36%,rgba(2,3,10,0.98)_70%)] opacity-95 shadow-[0_0_140px_rgba(5,199,242,0.18)]" />
-      <div className="absolute right-[-13rem] top-1/2 z-[3] h-[60rem] w-[60rem] -translate-y-1/2 rounded-full border border-[#05F2DB]/34 shadow-[0_0_140px_rgba(5,199,242,0.24)]" />
-      <div className="absolute right-[-4rem] top-[47%] z-[3] h-px w-[58rem] rotate-[-9deg] bg-gradient-to-r from-transparent via-[#05F2DB]/70 to-[#F205CB]/70 shadow-[0_0_32px_rgba(5,242,219,0.45)]" />
-      <div className="absolute left-[8%] top-[18%] z-[2] h-96 w-96 rounded-full bg-[#F205CB]/22 blur-3xl" />
-
-      <Container className="relative z-10 flex min-h-[calc(100svh-14rem)] items-center">
+      <div className="absolute inset-0 z-[1] bg-[linear-gradient(90deg,rgba(5,5,16,0.78)_0%,rgba(5,5,16,0.44)_48%,rgba(5,5,16,0.82)_100%),linear-gradient(180deg,#050510_0%,transparent_42%,#050510_100%)]" />
+      <div className="absolute bottom-[10%] left-[10%] z-[2] h-72 w-72 rounded-full bg-[#F205CB]/24 blur-3xl" />
+      <Container className="relative z-10 flex min-h-[calc(92svh-14rem)] items-center">
         <MotionReveal className="max-w-5xl">
-          <p className="text-xs font-black uppercase tracking-[0.28em] text-[#05F2DB]">Birthday host</p>
-          <h2 className="mt-5 font-display text-5xl font-extrabold leading-[0.88] text-white md:text-[9rem]">
-            Екатерина Скоблик
-          </h2>
-          <p className="mt-8 max-w-3xl text-2xl font-semibold leading-snug text-white/72 md:text-4xl">
-            Главная причина вечера. Не персона на афише, а центр притяжения своего круга.
+          <p className="mb-6 text-xs font-black uppercase tracking-[0.26em] text-[#05F2DB]">
+            Космический докинг
           </p>
+          <h2 className="font-display text-5xl font-extrabold leading-[0.92] text-white md:text-8xl">
+            Лаунж будущего между дневной и вечерней частью.
+          </h2>
+          <div className="mt-10 grid gap-5 md:grid-cols-2">
+            <div className="mission-panel">
+              <p className="text-3xl font-extrabold text-white">Днем</p>
+              <p className="mt-4 text-xl font-semibold leading-8 text-white/68">
+                Кофе-брейк с потрясающими пирогами и горячими напитками.
+              </p>
+            </div>
+            <div className="mission-panel">
+              <p className="text-3xl font-extrabold text-white">Вечером</p>
+              <p className="mt-4 text-xl font-semibold leading-8 text-white/68">
+                Полноценный фуршет с закусками, горячительными и безалкогольными напитками.
+              </p>
+            </div>
+          </div>
         </MotionReveal>
       </Container>
     </section>

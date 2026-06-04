@@ -9,124 +9,76 @@ import { hero, paymentHref } from "@/data/event";
 
 export function HeroSection() {
   const { scrollY } = useScroll();
-  const stationY = useTransform(scrollY, [0, 900], [0, 170]);
-  const stationScale = useTransform(scrollY, [0, 900], [1, 1.18]);
-  const contentY = useTransform(scrollY, [0, 700], [0, -70]);
-  const veilOpacity = useTransform(scrollY, [0, 540], [0.24, 0.9]);
+  const bgY = useTransform(scrollY, [0, 900], [0, 120]);
+  const bgScale = useTransform(scrollY, [0, 900], [1.04, 1.18]);
+  const titleY = useTransform(scrollY, [0, 700], [0, -80]);
+  const glowOpacity = useTransform(scrollY, [0, 500], [0.55, 0.15]);
 
   return (
-    <section id="hero" className="noise-mask relative h-[100svh] min-h-[760px] overflow-hidden md:min-h-[820px]">
+    <section id="hero" className="relative isolate h-[100svh] min-h-[760px] overflow-hidden bg-[#050510]">
+      <motion.div style={{ y: bgY, scale: bgScale }} className="absolute inset-0 z-0">
+        <Image
+          src="/images/mission-01.png"
+          alt="Космонавт, ракета и планета в футуристическом космопорту"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[52%_52%]"
+        />
+      </motion.div>
       <ParticleField />
-      <div className="absolute inset-0 -z-20 bg-[#02020a]" />
+      <div className="absolute inset-0 z-[1] bg-[linear-gradient(90deg,rgba(5,5,16,0.82)_0%,rgba(5,5,16,0.28)_42%,rgba(5,5,16,0.82)_100%),linear-gradient(180deg,rgba(5,5,16,0.72)_0%,rgba(5,5,16,0.1)_42%,#050510_100%)]" />
       <motion.div
-        style={{ y: stationY, scale: stationScale }}
-        className="pointer-events-none absolute inset-0 z-0 opacity-90"
-      >
-        <Image
-          src="/images/cinematic-universe.svg"
-          alt=""
-          fill
-          priority
-          className="scale-[1.18] object-cover object-center md:scale-100"
-        />
-      </motion.div>
-      <motion.div
-        style={{ y: stationY, scale: stationScale }}
-        className="pointer-events-none absolute inset-0 z-[1] mx-auto opacity-75 mix-blend-screen"
-      >
-        <Image
-          src="/images/hero-station.svg"
-          alt="Футуристическая космическая станция SHOW МОЗГ GO ON"
-          fill
-          priority
-          className="scale-[1.34] object-contain object-center md:scale-[1.14]"
-        />
-      </motion.div>
-      <motion.div
-        className="absolute left-[8%] top-[18%] z-[2] h-48 w-48 rounded-full bg-[#05F2DB]/18 blur-3xl md:h-80 md:w-80"
-        animate={{ opacity: [0.28, 0.62, 0.28], scale: [1, 1.16, 1] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        style={{ opacity: glowOpacity }}
+        className="absolute left-1/2 top-1/2 z-[2] h-[44rem] w-[44rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#05C7F2]/20 blur-3xl"
       />
       <motion.div
-        className="absolute bottom-[10%] right-[7%] z-[2] h-56 w-56 rounded-full bg-[#F205CB]/18 blur-3xl md:h-96 md:w-96"
-        animate={{ opacity: [0.25, 0.72, 0.25], scale: [1.12, 1, 1.12] }}
-        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute right-[8%] top-[18%] z-[2] h-56 w-56 rounded-full border border-[#05F2DB]/35 shadow-[0_0_90px_rgba(5,242,219,0.22)]"
+        animate={{ rotate: 360 }}
+        transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
       />
       <motion.div
-        style={{ opacity: veilOpacity }}
-        className="absolute inset-0 z-[3] bg-[radial-gradient(circle_at_50%_42%,transparent_0%,rgba(5,5,16,0.2)_36%,rgba(5,5,16,0.84)_82%),linear-gradient(180deg,rgba(5,5,16,0.15)_0%,rgba(5,5,16,0.08)_42%,#050510_100%)]"
+        className="absolute bottom-[16%] left-[-8%] z-[2] h-px w-[70vw] rotate-[-10deg] bg-gradient-to-r from-transparent via-[#05F2DB]/80 to-[#F205CB]/70 shadow-[0_0_34px_rgba(5,242,219,0.45)]"
+        animate={{ x: [-80, 80, -80], opacity: [0.35, 0.85, 0.35] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
-      <div className="absolute inset-x-0 top-0 z-[4] h-48 bg-gradient-to-b from-[#050510]/85 to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 z-[4] h-72 bg-gradient-to-t from-[#050510] to-transparent" />
 
-      <Container className="relative z-10 flex h-full flex-col justify-between pb-8 pt-28 md:pb-12">
-        <motion.div
-          initial={{ opacity: 0, y: -14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.75, delay: 0.15 }}
-          className="flex flex-col gap-2 text-xs font-black uppercase tracking-[0.18em] text-white/62 md:flex-row md:items-center md:justify-between"
-        >
-          <span>{hero.dateLine}</span>
-          <span className="text-[#05F2DB]">{hero.label}</span>
-        </motion.div>
-
-        <motion.div style={{ y: contentY }} className="mx-auto flex w-full max-w-6xl flex-col items-center text-center">
-          <h1 className="font-display glow-text text-[4.15rem] font-extrabold leading-[0.82] text-white md:text-[9.4rem] lg:text-[12.2rem]">
-            {hero.title.split(" ").map((word, index) => (
-              <motion.span
-                key={word}
-                initial={{ opacity: 0.2, y: 24, filter: "blur(5px)" }}
-                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                transition={{ duration: 0.62, delay: 0.16 + index * 0.05, ease: [0.22, 1, 0.36, 1] }}
-                className="mx-[0.045em] inline-block"
-              >
-                {word}
-              </motion.span>
-            ))}
-          </h1>
-
-          <div className="mt-8 flex max-w-4xl flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xl font-semibold leading-tight text-white md:text-3xl">
-            {hero.offer.map((line, index) => (
-              <motion.p
-                key={line}
-                initial={{ opacity: 0, x: -18 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.7, delay: 1.05 + index * 0.12 }}
-                className={index === hero.offer.length - 1 ? "text-gradient" : ""}
-              >
-                {line}
-              </motion.p>
-            ))}
-          </div>
+      <Container className="relative z-10 flex h-full flex-col justify-end pb-10 pt-28 md:pb-14">
+        <motion.div style={{ y: titleY }} className="max-w-6xl">
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.68 }}
-            className="mx-auto mt-7 max-w-3xl text-base leading-7 text-white/70 md:text-xl"
+            transition={{ duration: 0.7 }}
+            className="mb-5 text-xs font-black uppercase tracking-[0.28em] text-[#05F2DB] md:text-sm"
+          >
+            {hero.date} · {hero.city}
+          </motion.p>
+          <h1 className="font-display glow-text text-[4.2rem] font-extrabold leading-[0.84] text-white md:text-[9rem] lg:text-[12rem]">
+            {hero.title}
+          </h1>
+          <motion.p
+            initial={{ opacity: 0, y: 22 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.75, delay: 0.2 }}
+            className="mt-7 max-w-3xl text-xl font-semibold leading-snug text-white/82 md:text-3xl"
           >
             {hero.description}
           </motion.p>
+          <div className="mt-8 grid max-w-4xl gap-3 text-sm font-bold uppercase tracking-[0.16em] text-white/70 md:grid-cols-2">
+            <p className="glass-panel">{hero.day}</p>
+            <p className="glass-panel">{hero.night}</p>
+          </div>
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 1.88 }}
-            className="mt-8 flex flex-col items-center gap-4"
+            transition={{ duration: 0.7, delay: 0.35 }}
+            className="mt-8"
           >
             <MagneticButton href={paymentHref} size="lg">
               {hero.cta}
             </MagneticButton>
-            <p className="max-w-md text-sm font-semibold uppercase tracking-[0.13em] text-white/62">{hero.price}</p>
           </motion.div>
         </motion.div>
-
-        <motion.a
-          href="#origin"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2.2, duration: 0.8 }}
-          className="mx-auto h-12 w-px bg-gradient-to-b from-white/0 via-white/60 to-white/0"
-        >
-        </motion.a>
       </Container>
     </section>
   );

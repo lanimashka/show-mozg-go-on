@@ -100,6 +100,56 @@ a {
   color: transparent;
 }
 
+.glass-panel,
+.mission-panel {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(5, 242, 219, 0.18);
+  border-radius: 28px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.095), rgba(255, 255, 255, 0.025)),
+    radial-gradient(circle at 12% 0%, rgba(242, 5, 203, 0.13), transparent 18rem);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 24px 90px rgba(0, 0, 0, 0.36),
+    0 0 54px rgba(5, 199, 242, 0.08);
+  backdrop-filter: blur(24px);
+}
+
+.glass-panel {
+  padding: 18px 20px;
+}
+
+.mission-panel {
+  padding: 28px;
+}
+
+.mission-panel::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  opacity: 0.38;
+  background:
+    linear-gradient(90deg, transparent 0 48%, rgba(5, 242, 219, 0.18) 49%, transparent 50%),
+    linear-gradient(0deg, transparent 0 48%, rgba(242, 5, 203, 0.12) 49%, transparent 50%);
+  background-size: 88px 88px;
+  mask-image: linear-gradient(135deg, black, transparent 72%);
+}
+
+.holo-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  border: 1px solid rgba(5, 242, 219, 0.2);
+  border-radius: 999px;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.055);
+  box-shadow: 0 0 28px rgba(5, 242, 219, 0.08);
+  color: rgba(255, 255, 255, 0.84);
+  backdrop-filter: blur(18px);
+}
+
 .noise-mask {
   position: relative;
 }

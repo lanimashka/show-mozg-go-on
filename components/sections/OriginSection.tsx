@@ -4,29 +4,34 @@ import { MotionReveal } from "@/components/ui/MotionReveal";
 
 export function OriginSection() {
   return (
-    <section id="origin" className="relative min-h-[100svh] overflow-hidden py-28 md:py-36">
+    <section id="about" className="relative isolate min-h-[100svh] overflow-hidden py-28 md:py-36">
       <Image
-        src="/images/cinematic-universe.svg"
-        alt=""
+        src="/images/mission-04.png"
+        alt="Футуристический космический город с планетой и орбитальными станциями"
         fill
-        className="absolute inset-0 z-0 scale-125 object-cover object-center opacity-72 md:scale-105"
+        sizes="100vw"
+        className="absolute inset-0 z-0 object-cover object-center"
       />
-      <div className="absolute inset-0 z-[1] bg-[radial-gradient(circle_at_70%_45%,rgba(5,242,219,0.08),transparent_34%),linear-gradient(90deg,#050510_0%,rgba(5,5,16,0.76)_42%,rgba(5,5,16,0.28)_100%),linear-gradient(180deg,#050510_0%,transparent_30%,#050510_100%)]" />
-      <div className="absolute left-[-12%] top-1/3 z-[2] h-[38rem] w-[38rem] rounded-full bg-[#F205CB]/18 blur-3xl" />
-      <div className="absolute right-[-8%] top-[18%] z-[2] h-[34rem] w-[34rem] rounded-full border border-[#05F2DB]/18 shadow-[0_0_90px_rgba(5,242,219,0.16)]" />
-
+      <div className="absolute inset-0 z-[1] bg-[linear-gradient(90deg,#050510_0%,rgba(5,5,16,0.68)_48%,rgba(5,5,16,0.22)_100%),linear-gradient(180deg,#050510_0%,transparent_38%,#050510_100%)]" />
+      <div className="absolute left-[-12rem] top-1/3 z-[2] h-[34rem] w-[34rem] rounded-full bg-[#F205CB]/22 blur-3xl" />
       <Container className="relative z-10 flex min-h-[calc(100svh-14rem)] items-center">
         <MotionReveal className="max-w-5xl">
-          <p className="mb-6 text-xs font-black uppercase tracking-[0.22em] text-[#05F2DB]">
-            Екатерина Скоблик · 08 июня
+          <p className="mb-6 text-xs font-black uppercase tracking-[0.26em] text-[#05F2DB]">
+            О событии
           </p>
-          <h2 className="font-display text-5xl font-extrabold leading-[0.9] text-white md:text-[8.5rem]">
-            Не формат. <br />
-            <span className="text-gradient">Вселенная вечера.</span>
+          <h2 className="font-display text-5xl font-extrabold leading-[0.92] text-white md:text-[8rem]">
+            Это не просто конференция.
           </h2>
-          <p className="mt-8 max-w-3xl text-2xl font-semibold leading-snug text-white/76 md:text-4xl">
-            День рождения Екатерины как премиальный запуск: свет, музыка, люди и ощущение закрытого круга.
-          </p>
+          <div className="mt-9 max-w-3xl space-y-5 text-xl font-semibold leading-snug text-white/76 md:text-3xl">
+            <p>Это день, где встречаются предприниматели, маркетологи, специалисты, эксперты и друзья.</p>
+            <p>Днем мы говорим о нейросетях, маркетинге, технологиях, рекламе и будущем бизнеса.</p>
+            <p>Вечером превращаемся в большую компанию единомышленников, чтобы отметить день рождения Екатерины Скоблик.</p>
+          </div>
+          <div className="mt-10 flex flex-wrap gap-3 text-sm font-black uppercase tracking-[0.18em] text-white/72">
+            <span className="holo-chip">Много общения</span>
+            <span className="holo-chip">Новые знакомства</span>
+            <span className="holo-chip">Полезные связи</span>
+          </div>
         </MotionReveal>
       </Container>
     </section>
