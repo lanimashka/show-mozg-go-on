@@ -5,15 +5,18 @@ import { program } from "@/data/event";
 
 export function DayNightSection() {
   return (
-    <section id="program" className="relative isolate overflow-hidden py-28 md:py-40">
+    <section id="program" className="relative isolate overflow-hidden py-36 md:py-52">
       <Image
         src="/images/mission-05.png"
         alt="Огромная космическая станция и старт ракет"
         fill
         sizes="100vw"
-        className="absolute inset-0 z-0 object-cover object-center opacity-48"
+        className="absolute inset-0 z-0 scale-105 object-cover object-center opacity-82"
       />
-      <div className="absolute inset-0 z-[1] bg-[linear-gradient(180deg,#050510_0%,rgba(5,5,16,0.78)_18%,rgba(5,5,16,0.9)_72%,#050510_100%)]" />
+      <div className="poster-ringed-world absolute -right-[22rem] top-[6rem] z-[1] h-[54rem] w-[54rem] opacity-75" />
+      <div className="space-lane absolute right-0 top-[18rem] z-[3] h-[15rem] w-[62vw] opacity-65" />
+      <div className="absolute inset-0 z-[2] bg-[radial-gradient(circle_at_70%_12%,rgba(5,242,219,0.18),transparent_28rem),radial-gradient(circle_at_18%_45%,rgba(242,5,203,0.2),transparent_36rem),linear-gradient(180deg,#050510_0%,rgba(5,5,16,0.62)_18%,rgba(5,5,16,0.88)_72%,#050510_100%)]" />
+      <div className="hero-star-depth absolute inset-0 z-[3]" />
       <Container className="relative z-10">
         <MotionReveal className="max-w-5xl">
           <p className="mb-6 text-xs font-black uppercase tracking-[0.26em] text-[#05F2DB]">
@@ -23,11 +26,11 @@ export function DayNightSection() {
             Маршрут дневной экспедиции.
           </h2>
         </MotionReveal>
-        <div className="mt-16 space-y-5">
+        <div className="mission-route mt-16 space-y-5">
           {program.map((item, index) => (
             <MotionReveal key={`${item.time}-${item.name}`} delay={index * 0.035} className="group relative">
               <div className="absolute left-6 top-0 hidden h-full w-px bg-gradient-to-b from-[#05F2DB]/0 via-[#05F2DB]/45 to-[#F205CB]/0 md:block" />
-              <div className="mission-panel relative grid gap-6 md:grid-cols-[10rem_1fr] md:items-start">
+              <div className="mission-panel relative grid gap-6 transition duration-500 group-hover:border-[#05F2DB]/55 group-hover:shadow-[0_0_70px_rgba(5,242,219,0.18),0_0_110px_rgba(242,5,203,0.12)] md:grid-cols-[10rem_1fr] md:items-start">
                 <div>
                   <p className="font-display text-3xl font-extrabold text-gradient md:text-4xl">{item.time}</p>
                   <div className="mt-4 h-3 w-3 rounded-full bg-[#05F2DB] shadow-[0_0_28px_rgba(5,242,219,0.95)] transition group-hover:scale-150" />

@@ -7,7 +7,7 @@ export function AtmosphereSection() {
   return (
     <section id="evening" className="relative isolate min-h-[100svh] overflow-hidden py-28 md:py-36">
       <Image
-        src="/images/mission-04.png"
+        src="/images/mission-02.png"
         alt="Космический город, планета и орбитальные станции"
         fill
         sizes="100vw"

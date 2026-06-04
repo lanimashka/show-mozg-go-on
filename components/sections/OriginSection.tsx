@@ -4,17 +4,19 @@ import { MotionReveal } from "@/components/ui/MotionReveal";
 
 export function OriginSection() {
   return (
-    <section id="about" className="relative isolate min-h-[100svh] overflow-hidden py-28 md:py-36">
+    <section id="about" className="relative isolate min-h-[100svh] overflow-hidden py-36 md:py-48">
       <Image
-        src="/images/mission-04.png"
+        src="/images/mission-05.png"
         alt="Футуристический космический город с планетой и орбитальными станциями"
         fill
         sizes="100vw"
-        className="absolute inset-0 z-0 object-cover object-center"
+        className="absolute inset-0 z-0 scale-105 object-cover object-center"
       />
-      <div className="absolute inset-0 z-[1] bg-[linear-gradient(90deg,#050510_0%,rgba(5,5,16,0.68)_48%,rgba(5,5,16,0.22)_100%),linear-gradient(180deg,#050510_0%,transparent_38%,#050510_100%)]" />
-      <div className="absolute left-[-12rem] top-1/3 z-[2] h-[34rem] w-[34rem] rounded-full bg-[#F205CB]/22 blur-3xl" />
-      <Container className="relative z-10 flex min-h-[calc(100svh-14rem)] items-center">
+      <div className="poster-ringed-world absolute -right-[18rem] top-[4rem] z-[1] h-[44rem] w-[44rem] md:-right-[10rem] md:h-[58rem] md:w-[58rem]" />
+      <div className="space-lane absolute right-0 top-[40%] z-[3] h-[14rem] w-[58vw] opacity-70" />
+      <div className="absolute inset-0 z-[2] bg-[radial-gradient(circle_at_78%_24%,rgba(5,242,219,0.2),transparent_31rem),radial-gradient(circle_at_18%_68%,rgba(242,5,203,0.22),transparent_34rem),linear-gradient(90deg,#050510_0%,rgba(5,5,16,0.74)_42%,rgba(5,5,16,0.26)_100%),linear-gradient(180deg,#050510_0%,transparent_38%,#050510_100%)]" />
+      <div className="hero-star-depth absolute inset-0 z-[3]" />
+      <Container className="relative z-10 flex min-h-[calc(100svh-18rem)] items-center">
         <MotionReveal className="max-w-5xl">
           <p className="mb-6 text-xs font-black uppercase tracking-[0.26em] text-[#05F2DB]">
             О событии
